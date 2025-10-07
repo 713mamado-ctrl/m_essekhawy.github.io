@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>آراء العملاء</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>آراء العملاء</h1>
+  </header>
+
+  <main>
+    <section class="reviews">
+      <div class="review">
+        <img src="assets/images/user1.png" alt="عميل 1">
+        <strong class="review-name">عميل 1</strong>
+        <p class="review-text">هذا تعليق تجريبي للعميل الأول.</p>
+        <div class="review-actions">
+          <span class="edit">✏️</span>
+          <span class="delete">🗑️</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="add-review">
+      <h2>أضف رأيك</h2>
+      <form id="reviewForm" action="https://formspree.io/f/mnqrlvdp" method="POST">
+        <input type="text" id="name" name="name" placeholder="اكتب اسمك" required>
+        <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" required>
+        <textarea id="comment" name="comment" placeholder="اكتب تعليقك هنا" required></textarea>
+        <button type="submit">إرسال</button>
+        <div id="formMessage" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

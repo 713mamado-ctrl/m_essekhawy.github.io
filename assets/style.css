@@ -1,0 +1,15 @@
+body { font-family: Arial, sans-serif; background: #f5f5f5; margin:0; padding:0; }
+header { background: #3498db; color:#fff; text-align:center; padding:20px; }
+h1, h2 { margin:0 0 10px 0; }
+.reviews { display: flex; flex-direction: column; gap: 20px; padding:20px; max-width:800px; margin:0 auto; }
+.review { background-color: #fff; padding:15px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); width:100%; }
+.review img { width:50px; height:50px; border-radius:50%; margin-bottom:10px; }
+.review p { margin:5px 0; }
+.review-actions { margin-top:10px; }
+.review-actions span { cursor:pointer; margin-right:10px; }
+.add-review { background:#fff; padding:20px; border-radius:10px; max-width:800px; margin:20px auto; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+.add-review input, .add-review textarea { width:100%; padding:10px; margin:5px 0; border:1px solid #ccc; border-radius:5px; }
+.add-review button { padding:10px 20px; border:none; border-radius:5px; background:#3498db; color:#fff; cursor:pointer; }
+.review-badge { display:inline-block; font-size:0.8em; padding:3px 8px; border-radius:12px; background:#f39c12; color:#fff; margin-left:8px; }
+#formMessage.success { color: green; }
+#formMessage.error { color: red; }
