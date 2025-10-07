@@ -70,7 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    // إضافة التعليق فورًا
     addReviewToPage(name, comment);
+
+    // تفريغ الحقول
+    form.reset();
 
     try {
       const action = form.getAttribute('action');
@@ -82,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (res.ok) {
         msg.textContent = 'تم الإرسال!';
         msg.className = 'success';
-        form.reset();
       } else {
         const data = await res.json().catch(()=>({}));
         msg.textContent = data.error || 'حدث خطأ أثناء الإرسال.';
