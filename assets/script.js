@@ -15,14 +15,13 @@ function attachEditDeleteHandlers(container) {
   });
 }
 
-function addReviewToPage(name, text, verified=false) {
+function addReviewToPage(name, text) {
   const reviewsContainer = document.querySelector('.reviews');
   const div = document.createElement('div');
   div.className = 'review';
   div.innerHTML = `
     <img src="assets/images/user1.png" alt="${escapeHtml(name)}">
     <strong class="review-name">${escapeHtml(name)}</strong>
-    ${ verified ? '' : '<span class="review-badge">قيد التحقق — مرسَل للمدير</span>' }
     <p class="review-text">${escapeHtml(text)}</p>
     <div class="review-actions">
       <span class="edit">✏️</span>
@@ -71,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    addReviewToPage(name, comment, false);
+    addReviewToPage(name, comment);
 
     try {
       const action = form.getAttribute('action');
@@ -81,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         body: new FormData(form)
       });
       if (res.ok) {
-        msg.textContent = 'تم الإرسال، وسيتم التحقق قريبا.';
+        msg.textContent = 'تم الإرسال!';
         msg.className = 'success';
         form.reset();
       } else {
